@@ -8,8 +8,9 @@ def callback(channel):
 
 def main():
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(1, GPIO.BOTH, callback=callback)
+    GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.add_event_detect(18, GPIO.BOTH, callback=callback)
+    print("motion listener registered")
 
     try:
         while True:
